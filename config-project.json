@@ -1,0 +1,23 @@
+{
+  "name" : "nats",
+  "variableSets" : {
+    "default" : { }
+  },
+  "variableXpaths" : {
+    "/adapter/shared-components/connections/nats-server-basic-connection[unique-id=\"nats-connection\"]/url" : "${natsUrl}",
+    "/adapter/channel-list/channel[unique-id=\"to-nats\"]/workflow-list/standard-workflow[unique-id=\"to-nats\"]/producer/subject" : "${natsSubject}",
+    "/adapter/channel-list/channel[unique-id=\"nats-to-fs\"]/consume-connection/url" : "${natsUrl}",
+    "/adapter/channel-list/channel[unique-id=\"to-nats\"]/consume-connection/url" : "${natsUrl}",
+    "/adapter/channel-list/channel[unique-id=\"nats-to-fs\"]/workflow-list/standard-workflow[unique-id=\"nats-to-fs\"]/consumer/subject" : "${natsSubject}",
+    "/adapter/channel-list/channel[unique-id=\"to-nats\"]/workflow-list/standard-workflow[unique-id=\"to-nats\"]/consumer/subject" : "${natsSubject}",
+    "/adapter/channel-list/channel[unique-id=\"nats-to-fs\"]/workflow-list/standard-workflow[unique-id=\"nats-to-fs\"]/producer/base-directory-url" : "${fsDir}"
+  },
+  "uidInXincludeCompntListFileName" : false,
+  "xincludeXpaths" : { },
+  "additionalFiles" : {
+    "bootstrap.properties" : "bootstrap.properties",
+    "log4j2.xml" : "log4j2.xml"
+  },
+  "optionalComponentsInUse" : [ "com.adaptris:interlok-nats:4.0-SNAPSHOT" ],
+  "structured" : true
+}

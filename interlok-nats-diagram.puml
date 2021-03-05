@@ -1,0 +1,14 @@
+@startuml
+partition "To NATS" {
+  "Polling Trigger" -right-> "Service Collection" as SC1
+  SC1 -right-> "NATS Producer"
+  
+}
+"NATS Producer" -right-> "NATS Server" as NATS
+partition "NATS To FS" {
+  NATS -right-> "NATS Consumer"
+  "NATS Consumer" -right-> "Service Collection" as SC2
+  SC2 -right-> "FS Producer"
+}
+  "FS Producer" -right-> "FS"
+@enduml
