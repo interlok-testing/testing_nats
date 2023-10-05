@@ -27,6 +27,7 @@ graph LR
     NC --> SC2(Service Collection)
     SC2 --> FP(FS Producer)
   end
+  FP --> FS(FS)
 ```
 
 ## Getting started
