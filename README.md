@@ -21,9 +21,9 @@ graph LR
     SC1 --> NP(NATS Producer)
   end
   NP --> NS[NATS Server]
+  NS --> NC("NATS Consumer")
   subgraph NATS To FS
     direction LR
-    NS --> NC(NATS Consumer)
     NC --> SC2(Service Collection)
     SC2 --> FP(FS Producer)
   end
