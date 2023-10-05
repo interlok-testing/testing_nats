@@ -1,5 +1,8 @@
 # NATS Testing
 
+[![license](https://img.shields.io/github/license/interlok-testing/testing_nats.svg)](https://github.com/interlok-testing/testing_nats/blob/develop/LICENSE)
+[![Actions Status](https://github.com/interlok-testing/testing_nats/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/interlok-testing/testing_nats/actions/workflows/gradle-build.yml)
+
 Project tests interlok-nats features
 
 ## What it does
