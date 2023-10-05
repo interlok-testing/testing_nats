@@ -13,7 +13,21 @@ The first workflow has a polling trigger that produces a message every 10 second
 
 The second workflow is listening on the subject and copy the message on the file system.
 
-![NATS Diagram](/interlok-nats-diagram.png "NATS Diagram")
+```mermaid
+graph LR
+  subgraph To NATS
+    direction LR
+    PT(Polling Trigger) --> SC1(Service Collection)
+    SC1 --> NP(NATS Producer)
+  end
+  NP --> NS[NATS Server]
+  subgraph NATS To FS
+    direction LR
+    NS --> NC(NATS Consumer)
+    NC --> SC2(Service Collection)
+    SC2 --> FP(FS Producer)
+  end
+```
 
 ## Getting started
 

@@ -58,7 +58,6 @@
             <unique-id>nats-producer</unique-id>
             <subject>${natsSubject}</subject>
           </producer>
-          <produce-exception-handler class="null-produce-exception-handler"/>
           <unique-id>to-nats</unique-id>
           <message-metrics-interceptor>
             <unique-id>to-nats-MessageMetrics</unique-id>
@@ -87,7 +86,6 @@
           <consumer class="nats-standard-consumer">
             <unique-id>nats-consumer</unique-id>
             <subject>${natsSubject}</subject>
-            <destination-warning-logged>false</destination-warning-logged>
           </consumer>
           <service-collection class="service-list">
             <unique-id>reverent-rosalind</unique-id>
@@ -102,7 +100,6 @@
             </filename-creator>
             <base-directory-url>${fsDir}</base-directory-url>
           </producer>
-          <produce-exception-handler class="null-produce-exception-handler"/>
           <unique-id>nats-to-fs</unique-id>
           <message-metrics-interceptor>
             <unique-id>nats-to-fs-MessageMetrics</unique-id>
